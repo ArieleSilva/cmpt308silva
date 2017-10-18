@@ -15,16 +15,20 @@ where customers.city in (select city
 										   
 /* 2 */
 
-select products.name, avg(products.priceUSD)
+select products.name
 from products
-group by products.name
+where products.priceUSD >= (select avg(products.priceUSD) as average
+from products)
 order by products.name DESC
-
-error
 
 /* 3 */
 
+select customers.name, orders.pid, count(orders.totalUSD)
+from customers, orders
+group by customers.name, orders.pid, orders.totalUSD
+order by orders.totalUSD DESC;
 
+error
 
 /* 4 */
 
