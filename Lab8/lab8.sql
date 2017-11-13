@@ -1,4 +1,9 @@
-
+/* Ariele Silva
+   Database Management
+   Prof. Labouseur
+   13 November 2017
+   Lab 8 */
+   
 /* 2 */
 CREATE TABLE Actors (
 	ActorID int,
